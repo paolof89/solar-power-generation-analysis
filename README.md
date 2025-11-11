@@ -29,6 +29,7 @@ The project analyzes data from two solar power plants:
 - **Weather Sensor Data**: Corresponding weather conditions including irradiation, temperature, and other environmental factors
 
 *Note: The actual data files are not included in this repository and should be downloaded separately.*
+[](https://www.kaggle.com/datasets/anikannal/solar-power-generation-data/data)
 
 ## 🚀 Getting Started
 
