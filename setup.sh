@@ -4,15 +4,17 @@
 
 echo "🌞 Setting up Solar Power Generation Data Analysis Environment..."
 
-# Check if conda is installed
+# Check if conda is installed (Miniconda/Anaconda)
 if ! command -v conda &> /dev/null; then
-    echo "❌ Conda is not installed. Please install Miniconda or Anaconda."
-    echo "   Download from: https://docs.conda.io/en/latest/miniconda.html"
+    echo "❌ Conda (Miniconda/Anaconda) is not installed."
+    echo "   Please install Miniconda from: https://docs.conda.io/en/latest/miniconda.html"
+    echo "   Miniconda is recommended as it's lightweight and perfect for this project."
     exit 1
 fi
 
 # Check conda version
 conda_version=$(conda --version)
+echo "📋 Found: $conda_version"
 echo "📋 $conda_version"
 
 # Create conda environment

@@ -36,9 +36,10 @@ The project analyzes data from two solar power plants:
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- Miniconda or Anaconda (recommended for data science workflows)
-- Jupyter Notebook or JupyterLab
+- **Miniconda** (recommended - lightweight conda installer)
+  - Download from: https://docs.conda.io/en/latest/miniconda.html
+  - Alternatively, you can use Anaconda if already installed
+- Git (for cloning the repository)
 
 ### Installation
 
@@ -48,26 +49,32 @@ git clone <your-repository-url>
 cd "Solar Power Generation Data"
 ```
 
-2. Create a conda environment (recommended):
+2. Create a conda environment using Miniconda:
 ```bash
-# Using the provided environment file
+# Using the provided environment file (recommended)
 conda env create -f environment.yml
 conda activate solar-analysis
 
-# Or create manually
+# Or create manually with specific Python version
 conda create -n solar-analysis python=3.9
 conda activate solar-analysis
 ```
 
-3. Install dependencies:
+3. Install dependencies using conda (recommended):
 ```bash
-# Using pip
-pip install -r requirements.txt
+# If you used environment.yml, dependencies are already installed
+# Skip this step
 
-# Or using conda for better data science package management
-conda install pandas numpy scikit-learn matplotlib seaborn plotly jupyter
-conda install -c conda-forge prophet
-pip install kagglehub  # Not available in conda
+# If you created the environment manually:
+conda install -c conda-forge pandas numpy scikit-learn matplotlib seaborn plotly jupyter prophet
+pip install kagglehub  # This package is only available via pip
+```
+
+**Note**: Using conda for package management is preferred for data science projects as it handles complex dependencies better than pip.
+
+**Miniconda Tip**: If you're new to Miniconda, you may want to add the conda-forge channel for access to more packages:
+```bash
+conda config --add channels conda-forge
 ```
 
 4. Download the dataset:
