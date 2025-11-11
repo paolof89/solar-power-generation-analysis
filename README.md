@@ -17,6 +17,7 @@ Solar Power Generation Data/
 │   ├── 02_data_exploration_plant2.ipynb
 │   ├── 03_data_exploration_plant2_singles.ipynb
 │   └── 04_data_modelling_plant2_forecasting.ipynb
+├── environment.yml        # Conda environment specification
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
 ```
@@ -35,6 +36,7 @@ The project analyzes data from two solar power plants:
 ### Prerequisites
 
 - Python 3.8 or higher
+- Miniconda or Anaconda (recommended for data science workflows)
 - Jupyter Notebook or JupyterLab
 
 ### Installation
@@ -45,18 +47,26 @@ git clone <your-repository-url>
 cd "Solar Power Generation Data"
 ```
 
-2. Create a virtual environment (recommended):
+2. Create a conda environment (recommended):
 ```bash
-python -m venv solar_env
-# On Windows:
-solar_env\Scripts\activate
-# On macOS/Linux:
-source solar_env/bin/activate
+# Using the provided environment file
+conda env create -f environment.yml
+conda activate solar-analysis
+
+# Or create manually
+conda create -n solar-analysis python=3.9
+conda activate solar-analysis
 ```
 
 3. Install dependencies:
 ```bash
+# Using pip
 pip install -r requirements.txt
+
+# Or using conda for better data science package management
+conda install pandas numpy scikit-learn matplotlib seaborn plotly jupyter
+conda install -c conda-forge prophet
+pip install kagglehub  # Not available in conda
 ```
 
 4. Download the dataset:
